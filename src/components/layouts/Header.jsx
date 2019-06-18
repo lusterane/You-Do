@@ -4,7 +4,7 @@ export class Header extends Component {
     render() {
         return (
             <div className="Header" style={this.getStyle()}>
-                TOBY'S SICK REACT TODO LIST
+                REACT TODO LIST
             </div>
         )
     }
