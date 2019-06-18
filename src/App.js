@@ -23,7 +23,7 @@ class App extends React.Component {
             }
         ]
     }
-    onChecked = (id) => {
+    updateChecked = (id) => {
         this.setState({ items: this.state.items.map(item => {
             if(item.id === id){
                 item.isCompleted = !item.isCompleted;
@@ -32,11 +32,17 @@ class App extends React.Component {
         })});
     }
 
+    updateDelete = (id) => {
+        this.setState({ items: this.state.items.filter(item =>
+            item.id != id    
+        )});
+    }
+
     render(){
         return (
             <div className="App">
                 <Header />
-                <Todo todo={this.state.items} updateChecked={this.onChecked}/>
+                <Todo todo={this.state.items} updateChecked={this.updateChecked} onDelete={this.updateDelete}/>
             </div>
         );
     }

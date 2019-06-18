@@ -9,14 +9,36 @@ export class TodoItem extends Component {
             textDecoration: this.props.todo.isCompleted ? 'line-through' : 'none' 
         };
     }
+
+    getBtnStyle = () => {
+        return {
+            float: 'right',
+            color: 'white',
+            background: 'red',
+            borderRadius: '25px',
+            border: 'none',
+            width: '25px',
+            height: '25px',
+            cursor: 'pointer',
+        }
+    }
+
+
     render() {
+        const {id, title} = this.props.todo;
+
         return (
             <div style={this.getStyle()}>
                 <input 
                     type="checkbox"
-                    onChange={this.props.onChecked.bind(this, this.props.todo.id)}
+                    onChange={this.props.onChecked.bind(this, id)}
                 /> {' '}
-                {this.props.todo.title}
+                {title}
+                <input style={this.getBtnStyle()}
+                    type="submit"
+                    onClick={this.props.onDelete.bind(this, id)}
+                    value="X"
+                />
             </div>
         );
     }
