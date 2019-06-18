@@ -10,8 +10,8 @@ export class Header extends Component {
     }
     getStyle = () => {
         return { 
-            background: '#000',
-            color: '#fff',
+            background: '#61A49C',
+            color: '#FFF',
             textAlign: 'center',
             padding: '10px',
             fontSize: '50px'

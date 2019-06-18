@@ -6,23 +6,7 @@ import AddTodo from './components/AddTodo'
 
 class App extends React.Component {
     state = {
-        items: [
-            {
-                id: 1,
-                title: 'get money',
-                isCompleted: false
-            },
-            {
-                id: 2,
-                title: 'get more money',
-                isCompleted: false
-            },
-            {
-                id: 3,
-                title: 'win',
-                isCompleted: false
-            }
-        ]
+        items: []
     }
     updateChecked = (id) => {
         this.setState({ items: this.state.items.map(item => {

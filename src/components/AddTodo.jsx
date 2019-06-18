@@ -10,7 +10,11 @@ export class AddTodo extends Component {
 
     getBtnStyle = () => {
         return {
-            width:'10%'
+            width:'10%',
+            cursor:'pointer',
+            border: 'none',
+            background: '#20303E',
+            color: 'white',
         };
     }
 
@@ -18,6 +22,8 @@ export class AddTodo extends Component {
     getTxtStyle = () => {
         return {
             width: '90%',
+            fontSize: '20px',
+            border: 'none',
         };
     }
 

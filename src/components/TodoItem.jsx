@@ -5,8 +5,9 @@ export class TodoItem extends Component {
         return {
             border: '1px solid grey',
             padding: '10px',
-            background: '#ecf9a2',
-            textDecoration: this.props.todo.isCompleted ? 'line-through' : 'none' 
+            background: '#445358',
+            color: 'white',
+            textDecoration: this.props.todo.isCompleted ? 'line-through' : 'none' ,
         };
     }
 
@@ -14,7 +15,7 @@ export class TodoItem extends Component {
         return {
             float: 'right',
             color: 'white',
-            background: 'red',
+            background: '#BCCC6B',
             borderRadius: '25px',
             border: 'none',
             width: '25px',
