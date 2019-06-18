@@ -20,7 +20,7 @@ export class TodoItem extends Component {
             width: '25px',
             height: '25px',
             cursor: 'pointer',
-        }
+        };
     }
 
 
