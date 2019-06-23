@@ -1,6 +1,25 @@
 import React, { Component } from 'react'
 
 export class TodoItem extends Component {
+    render() {
+        const {id, title} = this.props.todo;
+
+        return (
+            <div style={this.getStyle()}>
+                <input 
+                    type="checkbox"
+                    onChange={this.props.onChecked.bind(this, id)}
+                /> {' '}
+                {title}
+                <input style={this.getBtnStyle()}
+                    type="submit"
+                    onClick={this.props.onDelete.bind(this, id)}
+                    value="X"
+                />
+            </div>
+        );
+    }
+
     getStyle = () => {
         return {
             border: '1px solid grey',
@@ -22,26 +41,6 @@ export class TodoItem extends Component {
             height: '25px',
             cursor: 'pointer',
         };
-    }
-
-
-    render() {
-        const {id, title} = this.props.todo;
-
-        return (
-            <div style={this.getStyle()}>
-                <input 
-                    type="checkbox"
-                    onChange={this.props.onChecked.bind(this, id)}
-                /> {' '}
-                {title}
-                <input style={this.getBtnStyle()}
-                    type="submit"
-                    onClick={this.props.onDelete.bind(this, id)}
-                    value="X"
-                />
-            </div>
-        );
     }
 }
 
