@@ -13,14 +13,14 @@ export class AddTodo extends Component {
         return (
             <div style={this.getStyle()}>
                 <input 
-                    style={this.getTxtStyle()}
+                    className='form-control mr-sm-2'
                     type="text"
                     placeholder="Add Todo"
                     value={this.state.text}
                     onChange={this.handleChange.bind(this)}
                 />
                 <input
-                    style={this.getBtnStyle()}
+                    className='btn btn-outline-success my-2 my-sm-0'
                     type="submit"
                     onClick={this.props.handleSubmit.bind(this, this.state.text)}
                 />

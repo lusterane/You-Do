@@ -61,8 +61,9 @@ class SignUpFormBase extends Component {
             username === '';
 
         return (
-            <form onSubmit={this.onSubmit}>
+            <form className='form-group' onSubmit={this.onSubmit}>
                 <input
+                    className='form-control'
                     name="username"
                     value={username}
                     onChange={this.onChange}
@@ -70,13 +71,15 @@ class SignUpFormBase extends Component {
                     placeholder="Username"
                 />
                 <input
+                    className='form-control'
                     name="email"
                     value={email}
                     onChange={this.onChange}
                     type="text"
-                    placeholder="Email Address"
+                    placeholder="Enter Email"
                 />
                 <input
+                    className='form-control'
                     name="passwordOne"
                     value={passwordOne}
                     onChange={this.onChange}
@@ -84,13 +87,14 @@ class SignUpFormBase extends Component {
                     placeholder="Password"
                 />
                 <input 
+                    className='form-control'
                     name="passwordTwo"
                     value={passwordTwo}
                     onChange={this.onChange}
                     type="password"
                     placeholder="Confirm Password"
                 />
-                <button type="submit" disabled={isInvalid}>Sign Up</button>
+                <button type="submit" className='btn btn-primary' disabled={isInvalid}>Sign Up</button>
 
                 {error && <p>{error.message}</p>}
             </form>

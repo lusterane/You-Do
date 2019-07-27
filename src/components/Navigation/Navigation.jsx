@@ -12,28 +12,29 @@ export class Navigation extends Component {
     
     render() {
         return (
-            <div className={styles['navigation']}>
-                <ul className={styles['navigation-list']}>
-                    <li className={styles['navigation-list-item']}>
-                        <Link style={this.getListStyle} to={ROUTES.SIGN_IN}>Sign In</Link>
+            <nav className='navbar navbar-expand-lg navbar-light bg-light'>
+                <Link className='navbar-brand' to={ROUTES.LANDING}>TODO List</Link>
+                <ul className='navbar-nav'>
+                    <li className='nav-item active'>
+                        <a className='nav-link'><Link className='nav-link' to={ROUTES.SIGN_IN}>Sign In</Link></a>
                     </li>
-                    <li className={styles['navigation-list-item']}>
-                        <Link style={this.getListStyle} to={ROUTES.SIGN_UP}>Sign Up</Link>
+                    <li className='nav-item active'>
+                        <a className='nav-link'><Link className='nav-link' to={ROUTES.SIGN_UP}>Sign Up</Link></a>
                     </li>
-                    <li className={styles['navigation-list-item']}>
-                        <Link style={this.getListStyle} to={ROUTES.LANDING}>Landing</Link>
+                    <li className='nav-item active'>
+                        <a className='nav-link'><Link className='nav-link' to={ROUTES.LANDING}>Landing</Link></a>
                     </li>
-                    <li className={styles['navigation-list-item']}>
-                        <Link style={this.getListStyle} to={ROUTES.HOME}>Home</Link>
+                    <li className='nav-item active'>
+                        <a className='nav-link'><Link className='nav-link' to={ROUTES.HOME}>Home</Link></a>
                     </li>
-                    <li className={styles['navigation-list-item']}>
-                        <Link style={this.getListStyle} to={ROUTES.ACCOUNT}>Account</Link>
+                    <li className='nav-item active'>
+                        <a className='nav-link'><Link className='nav-link' to={ROUTES.ACCOUNT}>Account</Link></a>
                     </li>
-                    <li className={styles['navigation-list-item']}>
-                        <Link style={this.getListStyle} to={ROUTES.ADMIN}>Admin</Link>
+                    <li className='nav-item active'>
+                        <a className='nav-link'><Link className='nav-link' to={ROUTES.ADMIN}>Admin</Link></a>
                     </li>
                 </ul>
-            </div>
+            </nav>
         )
     }
 }
