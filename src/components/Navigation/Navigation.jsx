@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+// import { Media } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Navigation.module.css'
 
@@ -13,8 +14,11 @@ export class Navigation extends Component {
     render() {
         return (
             <nav className='navbar navbar-expand-lg navbar-light bg-light'>
-                <Link className='navbar-brand' to={ROUTES.LANDING}>TODO List</Link>
+                <Link className='navbar-brand' to={ROUTES.HOME}>YOU-DO</Link>
                 <ul className='navbar-nav'>
+                    <li className='nav-item active'>
+                        <a className='nav-link'><Link className='nav-link' to={ROUTES.HOME}>Home</Link></a>
+                    </li>
                     <li className='nav-item active'>
                         <a className='nav-link'><Link className='nav-link' to={ROUTES.SIGN_IN}>Sign In</Link></a>
                     </li>
@@ -22,16 +26,7 @@ export class Navigation extends Component {
                         <a className='nav-link'><Link className='nav-link' to={ROUTES.SIGN_UP}>Sign Up</Link></a>
                     </li>
                     <li className='nav-item active'>
-                        <a className='nav-link'><Link className='nav-link' to={ROUTES.LANDING}>Landing</Link></a>
-                    </li>
-                    <li className='nav-item active'>
-                        <a className='nav-link'><Link className='nav-link' to={ROUTES.HOME}>Home</Link></a>
-                    </li>
-                    <li className='nav-item active'>
                         <a className='nav-link'><Link className='nav-link' to={ROUTES.ACCOUNT}>Account</Link></a>
-                    </li>
-                    <li className='nav-item active'>
-                        <a className='nav-link'><Link className='nav-link' to={ROUTES.ADMIN}>Admin</Link></a>
                     </li>
                 </ul>
             </nav>

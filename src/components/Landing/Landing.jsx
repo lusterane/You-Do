@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+import { base } from '../../base';
 import Todo from '../Todo';
 import Header from '../layouts/Header';
 import AddTodo from '../AddTodo';
@@ -7,6 +8,15 @@ import AddTodo from '../AddTodo';
 export class Landing extends Component {
     state = {
         items: []
+    }
+    componentWillMount(){
+        this.items = base.syncState('items', {
+            context: this,
+            state: 'items'
+        })
+    }
+    componentWillUnmount(){
+        base.removeBinding(this.items);
     }
     updateChecked = (id) => {
         this.setState({ items: this.state.items.map(item => {

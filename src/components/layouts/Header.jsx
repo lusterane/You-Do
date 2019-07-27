@@ -4,7 +4,7 @@ export class Header extends Component {
     render() {
         return (
             <div className="Header" style={this.getStyle()}>
-                REACT TODO LIST
+                YOU-DO
             </div>
         )
     }
