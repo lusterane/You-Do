@@ -7,19 +7,19 @@ export class Home extends Component {
     state = {
         items: [],
         text: "",
-        boops: "lol"
 
     }
     
     componentWillMount(){
-        this.setState({items: base.syncState('items', {
+        this.itemsRef = base.syncState('items', {
             context: this,
             state: 'items'
-        })})
+        });
     }
 
+    
     componentWillUnmount(){
-        base.removeBinding(this.state.items);
+        base.removeBinding(this.itemsRef);
     }
 
     componentDidUpdate = () => {
@@ -36,13 +36,15 @@ export class Home extends Component {
     }
 
     updateDelete = (id) => {
-        this.setState({ items: this.state.items.filter(item =>
-            item.id !== id    
-        )});
+        const prefilter = this.state.items.filter(item => item.id !== id)
+        this.setState({ 
+            items: prefilter ? prefilter : []
+        });
     }
 
     handleSubmit = (event) => {
         event.preventDefault();
+        console.log(this.state.items)
         this.setState( { items: this.state.items.concat({id: this.state.items.length+1, title: this.state.text, isCompleted: false})
         })
     }
