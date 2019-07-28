@@ -10,24 +10,37 @@ export class Header extends Component {
             message: "",
             uid: 0,
         },
-        quoteInEdit: ""
+        quoteInEdit: "",
+        updated: false
     }
 
-    componentWillMount(){
+    componentWillMount() {
         this.itemsRef = base.syncState('quote', {
             context: this,
             state: 'quote'
         });
+
     }
-    componentDidMount(){
-        console.log(this.state.quote)
+    
+    componentDidUpdate() {
+        if(this.state.quote != null && this.state.quote.message != "" && !this.state.updated){
+            this.setState({quoteInEdit: this.state.quote.message, updated: true})
+        }
     }
     componentWillUnmount(){
         base.removeBinding(this.itemsRef);
     }
 
-    handleSubmit = () => {
-        this.setState({quote: {message: this.state.quoteInEdit, uid:1}})
+    handleSubmit = (event) => {
+        event.preventDefault();
+        const message = this.state.quoteInEdit;
+        if(message == null || message == this.state.quote.message || message.length > 30){
+            alert("Header Change Unsuccessful")
+        }
+        else{
+            this.setState({quote: {message: this.state.quoteInEdit, uid:1}})
+            alert("Successfully Changed Header")
+        }
     }
 
     updateQuote = (event) => {
@@ -42,14 +55,15 @@ export class Header extends Component {
                         YOU-DO
                     </div>
                     <form onSubmit={this.handleSubmit}>
-                        <input 
+                    {`"`}
+                    <input 
                             type="text"
                             className="quote"
                             value={this.state.quoteInEdit}
                             placeholder="Temporary texbox for quotes"
-                            onChange={this.updateQuote}
-                        >        
-                        </input>
+                            onChange={this.updateQuote}>        
+                    </input>
+                    {`"`}
                     </form>
                 </div>
             </React.Fragment>
