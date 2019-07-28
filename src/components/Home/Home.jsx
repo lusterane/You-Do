@@ -7,7 +7,6 @@ export class Home extends Component {
     state = {
         items: [],
         text: "",
-
     }
     
     componentWillMount(){
@@ -16,7 +15,6 @@ export class Home extends Component {
             state: 'items'
         });
     }
-
     
     componentWillUnmount(){
         base.removeBinding(this.itemsRef);
@@ -38,15 +36,20 @@ export class Home extends Component {
     updateDelete = (id) => {
         const prefilter = this.state.items.filter(item => item.id !== id)
         this.setState({ 
-            items: prefilter ? prefilter : []
+            items: this.state.items.filter(item =>  item.id !== id)
         });
     }
 
     handleSubmit = (event) => {
         event.preventDefault();
-        console.log(this.state.items)
-        this.setState( { items: this.state.items.concat({id: this.state.items.length+1, title: this.state.text, isCompleted: false})
-        })
+        // this.setState({items: {}})
+        // this.state.items.push({id: this.state.items.length+1, title: this.state.text, isCompleted: false})
+        this.setState({ 
+            items: this.state.items.concat({id: this.state.items.length, title: this.state.text, isCompleted: false}),
+            text: "",
+        }
+            
+        )
     }
 
     updateText = (event) => {

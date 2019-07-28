@@ -3,8 +3,9 @@ import TodoItem from './TodoItem'
 
 export class Todo extends Component {
     render() {
-        return (this.props.todo.map((todo_item) => 
-            <TodoItem todo={todo_item} key={todo_item.id} onChecked={this.props.updateChecked} onDelete={this.props.onDelete}/>))
+        const filteredItems = this.props.todo.filter(item =>  item.id !== 0)
+        return (filteredItems.map((todo_item) => 
+        <TodoItem todo={todo_item} key={todo_item.id} onChecked={this.props.updateChecked} onDelete={this.props.onDelete}/>));
     }
 }
 
