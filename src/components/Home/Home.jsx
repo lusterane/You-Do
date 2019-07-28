@@ -4,25 +4,41 @@ import { base } from '../../base';
 import TodoSection from './TodoSection/TodoSection';
 
 export class Home extends Component {
-    state = {
-        items: [],
-        text: "",
+    constructor(props)
+    {
+        super(props);
+        this.state = {
+            items: {},
+            text: "",
+        }
     }
     
     componentWillMount(){
         this.itemsRef = base.syncState('items', {
             context: this,
             state: 'items'
-        });
+        })
     }
     
     componentWillUnmount(){
         base.removeBinding(this.itemsRef);
     }
-
-    componentDidUpdate = () => {
-        
-    }
+/*
+    componentDidMount = () => {
+        base.fetch('items', {
+            context: this,
+            asArray: true
+        }).then(data => {
+            let fetchedItems = {...data};
+            console.log("fetched items", fetchedItems.length)
+            if (fetchedItems.length === undefined) {
+                this.setState({isEmpty: true})
+                console.log("Set state fetching", this.state.isEmpty)
+            }
+        }).catch(error => {
+            console.log("Error fetching from fb: ", error)
+        })
+    }*/
 
     updateChecked = (id) => {
         this.setState({ items: this.state.items.map(item => {
@@ -34,22 +50,16 @@ export class Home extends Component {
     }
 
     updateDelete = (id) => {
-        const prefilter = this.state.items.filter(item => item.id !== id)
-        this.setState({ 
-            items: this.state.items.filter(item =>  item.id !== id)
-        });
+        const deleted = this.state.items.length !== 1 ? (
+            this.setState({ 
+                items: this.state.items.filter(item =>  item.id !== id)
+            })) : alert("Cannot delete last item");
     }
 
     handleSubmit = (event) => {
         event.preventDefault();
-        // this.setState({items: {}})
-        // this.state.items.push({id: this.state.items.length+1, title: this.state.text, isCompleted: false})
-        this.setState({ 
-            items: this.state.items.concat({id: this.state.items.length, title: this.state.text, isCompleted: false}),
-            text: "",
-        }
-            
-        )
+        this.setState({items: this.state.items.concat({id: this.state.items.length, title: this.state.text, isCompleted: false})
+        });
     }
 
     updateText = (event) => {
@@ -68,7 +78,7 @@ export class Home extends Component {
                         onChange={this.updateText}
                     />
                 </form>
-                <TodoSection todo={this.state.items} updateChecked={this.updateChecked} onDelete={this.updateDelete}/>
+                <TodoSection todo={this.state.items} key={this.state.items.length} updateChecked={this.updateChecked} onDelete={this.updateDelete.bind(this)}/>
             </React.Fragment>
         )
     }
