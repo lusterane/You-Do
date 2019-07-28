@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import TodoItem from './TodoItem'
+import TodoItem from '../TodoItem/TodoItem'
 
 export class Todo extends Component {
     render() {

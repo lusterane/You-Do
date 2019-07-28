@@ -17,9 +17,10 @@ class App extends React.Component {
         return (
             <React.Fragment>
                 <Router>
-                    <div className="app">
+                    <div className="app-container">
                         <Navigation />
                         <Header />
+                        <Route path="*" component={HomePage} />
                         <Route path={ROUTES.HOME} component={HomePage} />
                         <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
                         <Route path={ROUTES.SIGN_IN} component={SignInPage} />

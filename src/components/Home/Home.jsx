@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import { base } from '../../base';
-import Todo from '../Todo';
+import TodoSection from './TodoSection/TodoSection';
 
 export class Home extends Component {
     state = {
@@ -68,7 +68,7 @@ export class Home extends Component {
                         onChange={this.updateText}
                     />
                 </form>
-                <Todo todo={this.state.items} updateChecked={this.updateChecked} onDelete={this.updateDelete}/>
+                <TodoSection todo={this.state.items} updateChecked={this.updateChecked} onDelete={this.updateDelete}/>
             </React.Fragment>
         )
     }

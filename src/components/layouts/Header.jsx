@@ -23,6 +23,7 @@ export class Header extends Component {
     }
     
     componentDidUpdate() {
+        // refactor with prev state?
         if(this.state.quote != null && this.state.quote.message != "" && !this.state.updated){
             this.setState({quoteInEdit: this.state.quote.message, updated: true})
         }
