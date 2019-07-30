@@ -58,7 +58,7 @@ export class Home extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        this.setState({items: this.state.items.concat({id: this.state.items.length, title: this.state.text, isCompleted: false})
+        this.setState({items: this.state.items.concat({id: this.state.items.length , title: this.state.text, isCompleted: false})
         });
     }
 
@@ -78,7 +78,7 @@ export class Home extends Component {
                         onChange={this.updateText}
                     />
                 </form>
-                <TodoSection todo={this.state.items} key={this.state.items.length} updateChecked={this.updateChecked} onDelete={this.updateDelete.bind(this)}/>
+                <TodoSection todo={this.state.items} updateChecked={this.updateChecked} onDelete={this.updateDelete.bind(this)}/>
             </React.Fragment>
         )
     }
