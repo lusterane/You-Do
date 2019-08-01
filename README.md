@@ -1,8 +1,8 @@
-# Todo List
-Simple To Do list created using React and Firebase
+# YOU-DO
+Public To-Do list created using React and Firebase
 
 # Try it
-[lusterane.github.io/to-do-list](https://lusterane.github.io/to-do-list/)
+[lusterane.github.io/to-do-list](https://lusterane.github.io/you-do)
 
 # Install
 ```npm install```

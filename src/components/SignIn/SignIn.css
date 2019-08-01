@@ -1,0 +1,30 @@
+.card {
+    
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    width: 30vw;
+    margin: 3vh auto;
+}
+
+.form-group {
+    margin: auto;
+    width: 100%;
+    padding: 10px;
+    
+}
+
+.form-control {
+    margin: 1vw 0;
+}
+
+.container {
+    padding: 2vw;
+}
+
+#submit-btn {
+    width: 100%;
+}
+
+h1 {
+    padding-top: 1vw;
+    text-align: center;
+}

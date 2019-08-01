@@ -1,11 +1,10 @@
 {
-  "homepage": "https://lusterane.github.io/to-do-list",
+  "homepage": "https://lusterane.github.io/you-do",
   "name": "react-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "firebase": "^6.2.2",
-    "re-base": "^4.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.1",
