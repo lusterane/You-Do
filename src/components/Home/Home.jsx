@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 
-import { base } from '../../base';
 import TodoSection from './TodoSection/TodoSection';
 
 export class Home extends Component {
@@ -12,33 +11,6 @@ export class Home extends Component {
             text: "",
         }
     }
-    
-    componentWillMount(){
-        this.itemsRef = base.syncState('items', {
-            context: this,
-            state: 'items'
-        })
-    }
-    
-    componentWillUnmount(){
-        base.removeBinding(this.itemsRef);
-    }
-/*
-    componentDidMount = () => {
-        base.fetch('items', {
-            context: this,
-            asArray: true
-        }).then(data => {
-            let fetchedItems = {...data};
-            console.log("fetched items", fetchedItems.length)
-            if (fetchedItems.length === undefined) {
-                this.setState({isEmpty: true})
-                console.log("Set state fetching", this.state.isEmpty)
-            }
-        }).catch(error => {
-            console.log("Error fetching from fb: ", error)
-        })
-    }*/
 
     updateChecked = (id) => {
         this.setState({ items: this.state.items.map(item => {

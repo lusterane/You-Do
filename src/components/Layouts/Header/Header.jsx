@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
-import { base } from '../../../base';
 import { hidden } from 'ansi-colors';
-import firebase from 'firebase';
 import './Header.css'
 
 export class Header extends Component {
@@ -13,23 +11,12 @@ export class Header extends Component {
         quoteInEdit: "",
         updated: false
     }
-
-    componentWillMount() {
-        this.itemsRef = base.syncState('quote', {
-            context: this,
-            state: 'quote'
-        });
-
-    }
     
     componentDidUpdate() {
         // refactor with prev state?
         if(this.state.quote != null && this.state.quote.message != "" && !this.state.updated){
             this.setState({quoteInEdit: this.state.quote.message, updated: true})
         }
-    }
-    componentWillUnmount(){
-        base.removeBinding(this.itemsRef);
     }
 
     handleSubmit = (event) => {
