@@ -1,11 +1,17 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import './SignUp.css'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import './SignUp.css';
 
+import * as ROUTES from '../../constants/Routes';
+import { withFirebase } from '../Firebase';
 
-import * as ROUTES from '../../constants/Routes'
+const SignUpPage = () => (
+    <React.Fragment>
+        <SignUpForm />
+    </React.Fragment>
+)
 
-class SignUp extends Component {
+class SignUpFormBase extends Component {
     constructor(props) {
         super(props);
 
@@ -17,8 +23,27 @@ class SignUp extends Component {
         }
     }
 
+    clearState = () => {
+        this.setState({
+            email: '',
+            passwordOne: '',
+            passwordTwo: '',
+            error: null,
+        });
+    }
     onSubmit = event => {
         const { email, passwordOne } = this.state;
+
+        this.props.firebase
+            .doCreateUserWithEmailAndPassword(email, passwordOne)
+            .then(authUser => {
+                this.clearState();
+            })
+            .catch(error => {
+                this.setState({ error })
+            });
+
+        event.preventDefault();
     }
 
     onChange = event => {
@@ -84,6 +109,8 @@ const SignUpLink = () => (
     </p>
 )
 
-export default SignUp;
+const SignUpForm = withFirebase(SignUpFormBase);
 
-export { SignUpLink };
+export default SignUpForm;
+
+export { SignUpLink, SignUpForm};
