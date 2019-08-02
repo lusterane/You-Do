@@ -65,7 +65,7 @@ class SignUpFormBase extends Component {
             email === '';
         return (
             <React.Fragment>
-                <div className="container">
+                <div className="container-sign-up">
                     <div className="card">
                         <h1>SIGN UP</h1>
                         <form className='form-group' onSubmit={this.onSubmit}>

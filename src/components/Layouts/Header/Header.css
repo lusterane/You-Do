@@ -8,3 +8,8 @@
     background: #61A49C;
     text-align: center;
 }
+
+.quote, .author {
+    font-style: italic;
+    color: white;
+}

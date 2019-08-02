@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 import TodoSection from './TodoSection/TodoSection';
+import './Home.css';
 
 export class Home extends Component {
     constructor(props)
@@ -41,15 +42,19 @@ export class Home extends Component {
     render() {
         return (
             <React.Fragment>
-                <form onSubmit={this.handleSubmit}>
-                    <input 
-                        className='form-control mr-sm-2'
-                        type="text"
-                        placeholder="Add Todo"
-                        value={this.state.text}
-                        onChange={this.updateText}
-                    />
-                </form>
+                <div className="container-home">
+                    <div className="submit-box">
+                        <form onSubmit={this.handleSubmit}>
+                            <input 
+                                className='form-control mr-sm-2'
+                                type="text"
+                                placeholder="Add Todo"
+                                value={this.state.text}
+                                onChange={this.updateText}
+                            />
+                        </form>
+                    </div>
+                </div>
                 <TodoSection todo={this.state.items} updateChecked={this.updateChecked} onDelete={this.updateDelete.bind(this)}/>
             </React.Fragment>
         )

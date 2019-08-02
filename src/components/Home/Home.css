@@ -1,0 +1,15 @@
+.submit-box {
+    padding:1em;
+    width: 30em;
+    margin: auto;
+}
+
+.container-home {
+    width: 100%;
+    height: 50vh;
+    
+    background-image: url('../../assets/henry-co-tuNGv69BFmM-unsplash.jpg');
+    background-position: center;
+    background-repeat: no-repeat; 
+    background-size: cover; 
+}

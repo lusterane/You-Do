@@ -9,6 +9,7 @@ export class Header extends Component {
             uid: 0,
         },
         quoteInEdit: "",
+        writer: "Anonymous",
         updated: false
     }
     
@@ -43,16 +44,20 @@ export class Header extends Component {
                         YOU-DO
                     </div>
                     <form onSubmit={this.handleSubmit}>
-                    {`"`}
+                    {this.state.quoteInEdit ? (
+                        <div>
+                            <span className="quote">"{this.state.quoteInEdit}"</span> 
+                            <span className="author"> -{this.state.writer}</span>
+                        </div>    
+                        ) : ""}
+                    </form>
                     <input 
                             type="text"
                             className="quote"
                             value={this.state.quoteInEdit}
-                            placeholder="Temporary texbox for quotes"
+                            placeholder="Quote Testing"
                             onChange={this.updateQuote}>        
                     </input>
-                    {`"`}
-                    </form>
                 </div>
             </React.Fragment>
         )
