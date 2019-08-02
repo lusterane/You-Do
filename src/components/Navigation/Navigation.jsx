@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import styles from './Navigation.module.css'
 
-import * as ROUTES from '../../constants/Routes'
+import * as ROUTES from '../../constants/routes'
 
 export class Navigation extends Component {
     getListStyle = {

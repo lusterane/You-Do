@@ -1,7 +1,20 @@
 import React, { Component } from 'react'
+import { withRouter } from 'react-router-dom';
 
+import { SignUpLink } from '../SignUp'
+import { withFirebase } from '../Firebase';
+import * as ROUTES from '../../constants/routes';
 
-export class SignIn extends Component {
+const SignInPage = () => (
+    <React.Fragment>
+        <SignInForm />
+        <div className="form-footer">
+            <SignUpLink />
+        </div>
+    </React.Fragment>
+)
+
+class SignInFormBase extends Component {
     constructor(props){
         super(props);
 
@@ -12,8 +25,26 @@ export class SignIn extends Component {
         }
     }
     
+    clearState = () => {
+        this.setState({
+            email: '',
+            password:'',
+            error: null,
+        });
+    }
+
     onSubmit = event => {
         const { email, password } = this.state;
+
+        this.props.firebase
+            .doSignInWithEmailAndPassword(email, password)
+            .then(() => {
+                this.clearState();
+                this.props.history.push(ROUTES.HOME);
+            })
+            .catch( error => {
+                this.setState({ error });
+            })
     }
 
     onChange = event => {
@@ -54,9 +85,10 @@ export class SignIn extends Component {
                                 placeholder="Password"
                             />
                             <button type="submit" className='btn btn-primary' id="submit-btn" disabled={isInvalid}>SIGN IN</button>
-
-                            {error && <p>{error.message}</p>}
                         </form>
+                        <div className="form-footer">
+                            {error && <p>{error.message}</p>}
+                        </div>
                     </div>
                 </div>
             </React.Fragment>
@@ -64,4 +96,8 @@ export class SignIn extends Component {
     }
 }
 
-export default SignIn
+const SignInForm = withFirebase(SignInFormBase);
+
+export default SignInPage;
+
+export { SignInForm }

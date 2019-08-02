@@ -4,14 +4,14 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Header from './components/Layouts/Header/Header';
 import Navigation from './components/Navigation/Navigation'
-import SignUpPage from './components/SignUp/SignUp';
-import SignInPage from './components/SignIn/SignIn';
+import SignUpPage from './components/SignUp';
+import SignInPage from './components/SignIn';
 import PasswordForgetPage from './components/PasswordForget/PasswordForget';
 import HomePage from './components/Home/Home';
 import AccountPage from './components/Account/Account';
 import Footer from './components/Layouts/Footer/Footer'
 
-import * as ROUTES from './constants/Routes'
+import * as ROUTES from './constants/routes'
 
 class App extends React.Component {
     render(){
