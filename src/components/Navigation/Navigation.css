@@ -1,0 +1,14 @@
+.sign-out {
+  color: red;
+}
+.nav {
+  display:flex;
+}
+
+.left {
+  flex-direction: row-reverse;
+}
+
+.right {
+  flex-direction: row;
+}
