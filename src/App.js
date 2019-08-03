@@ -23,10 +23,10 @@ class App extends React.Component {
         return (
             <React.Fragment>
                 <Router>
-                    <Navigation />
-                    
                     <Route exact={true} path="/" component={HomePage} />
                     <Route path={ROUTES.HOME} component={HomePage} />
+
+                    <Navigation />
                     <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
                     <Route path={ROUTES.SIGN_IN} component={SignInPage} />
                     <Route path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage} />

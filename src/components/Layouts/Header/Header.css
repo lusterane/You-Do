@@ -2,20 +2,10 @@
     text-align: center;
 }
 
-.quote {
-    word-wrap: break-word;
+.logo {
     color: white;
-    padding: 5px;
-    font-size: 20px;
-}
-
-.quote-wrapper {
-    margin:auto;
-    width: 20%;
-}
-
-#quote-box {
-    margin: auto;
-    width: 30em;
+    font-weight: bolder;
+    padding:2em;
+    font-size:50px;
 }
 

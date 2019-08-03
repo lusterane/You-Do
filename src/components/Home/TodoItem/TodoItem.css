@@ -1,7 +1,9 @@
 .todo-item-container {
-    width: 20vw;
-    height: 20vw;
+    width: 400px;
+    height: 400px;
     box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    margin: 2em;
+    padding: 0;
 }
 
 .todo-text {
@@ -34,7 +36,7 @@
 }
 
 .like-container {
-    color: #8f8781;
+    color: white;
 }
 
 .like-container::selection {

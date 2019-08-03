@@ -2,17 +2,76 @@ import React, { Component } from 'react'
 
 import TodoSection from './TodoSection/TodoSection';
 import Header from '../Layouts/Header/Header'
+import Navigation from '../Navigation/Navigation'
 
 import './Home.css';
 
-export class Home extends Component {
+const HomePage = () => (
+    <React.Fragment>
+        <Navigation page={'home'}/>
+        <Home />
+    </React.Fragment>
+)
+
+class Home extends Component {
     constructor(props)
     {
         super(props);
         this.state = {
-            items: [],
+            items: this.getTestItems(),
             text: "",
         }
+    }
+
+    getTestItems = () =>{ 
+        const testTitle = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat mas";
+        return (
+    
+            [
+                {
+                    id: 1, 
+                    title: testTitle, 
+                    isCompleted: false, 
+                    numberLikes: 0,
+                    colorId: 1
+                },
+                {
+                    id: 2, 
+                    title: testTitle, 
+                    isCompleted: false, 
+                    numberLikes: 19,
+                    colorId: 2
+                },
+                {
+                    id: 3, 
+                    title: testTitle, 
+                    isCompleted: false, 
+                    numberLikes: 5,
+                    colorId: 1
+                },
+                {
+                    id: 4, 
+                    title: testTitle, 
+                    isCompleted: false, 
+                    numberLikes: 0,
+                    colorId: 3
+                },
+                {
+                    id: 5, 
+                    title: testTitle, 
+                    isCompleted: false, 
+                    numberLikes: 0,
+                    colorId: 2
+                },
+                {
+                    id: 6, 
+                    title: testTitle, 
+                    isCompleted: false, 
+                    numberLikes: 0,
+                    colorId:3
+                },
+            ]
+        )
     }
 
     updateChecked = (id) => {
@@ -77,7 +136,7 @@ export class Home extends Component {
                                     className='form-control mr-sm-2'
                                     type="text"
                                     id="submit-box"
-                                    placeholder="Add Todo"
+                                    placeholder="Make your mark"
                                     maxLength="280"
                                     value={this.state.text}
                                     onChange={this.updateText}
@@ -91,4 +150,4 @@ export class Home extends Component {
     }
 }
 
-export default Home
+export default HomePage;

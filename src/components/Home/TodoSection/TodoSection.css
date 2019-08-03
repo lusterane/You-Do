@@ -1,13 +1,13 @@
 .todo-section-container{
     top: 30vh;
     width: 80vw;
-    padding: 5em;
+    padding: 3em;
 }
 
 #todo-section-card {
     display: flex;
     flex-direction: row-reverse;
     flex-wrap: wrap-reverse;
-    justify-content: flex-end;
+    justify-content: center;
     box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 }

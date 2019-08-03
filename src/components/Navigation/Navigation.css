@@ -1,9 +1,5 @@
-.navbar {
-  /*background-color: #33345F;
-*/}
-
 #navbar {
-  color: white;
+  color: white!important;
 }
 .left {
   flex-direction: row-reverse;

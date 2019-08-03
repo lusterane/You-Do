@@ -8,10 +8,17 @@ import * as ROUTES from '../../constants/routes'
 
 export class Navigation extends Component {
     
+    getNavStyle = () => {
+        console.log("page", this.props.page === 'home')
+        return (
+            (this.props.page === 'home') ? 'navbar navbar-expand-lg navbar-dark' : 'navbar navbar-expand-lg navbar-light bg-light'
+        );
+    }
+
     render() {
         return (
             <React.Fragment>
-                <nav class="navbar navbar-expand-lg navbar-light" id="navbar">
+                <nav className={this.getNavStyle()} id="navbar">
                     <Link className='navbar-brand' to={ROUTES.HOME}>YOU-DO</Link>
                     <div className="collapse navbar-collapse">
                         <ul className='navbar-nav'>
