@@ -1,10 +1,46 @@
 .todo-item-container {
     width: 20vw;
     height: 20vw;
-    padding: 2em;
     box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 }
 
-.todo-title {
+.todo-text {
     cursor: pointer;
+}
+
+.star {
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+    cursor: pointer;
+    outline: 0!important;
+}
+
+.gold-star {
+    color: #f5e131;
+}
+
+.low-poly-tile {
+    height: 8vw;
+    background-color: #33345F;
+    padding: 1em;
+    text-align: right;
+}
+
+.text-container {
+    padding: 1.5em;
+}
+
+.like-container {
+    color: #8f8781;
+}
+
+.like-container::selection {
+    background: none;
+}
+
+.like-counter {
+    padding-right: 8px;
 }

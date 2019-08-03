@@ -9,7 +9,7 @@ export class Todo extends Component {
             <React.Fragment>
                 <div className="card todo-section-container" id="todo-section-card">
                     {this.props.todo.map((todo_item) => 
-                        <TodoItem todo={todo_item} key={todo_item.id} onChecked={this.props.updateChecked} onDelete={this.props.onDelete.bind(this)}/>)}
+                        <TodoItem todo={todo_item} key={todo_item.id} updateChecked={this.props.updateChecked} incrementStar={this.props.incrementStar}/>)}
                 </div>
             </React.Fragment>
         )}

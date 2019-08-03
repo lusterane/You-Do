@@ -9,9 +9,6 @@ import * as ROUTES from '../../constants/routes'
 export class Navigation extends Component {
     
     render() {
-        const colorStyle = {
-            backgroundColor: '#33345F',
-        };
         return (
             <React.Fragment>
                 <nav class="navbar navbar-expand-lg navbar-light" id="navbar">

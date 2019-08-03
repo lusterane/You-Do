@@ -23,18 +23,28 @@ export class Home extends Component {
             return item;
         })});
     }
-
+/*
     updateDelete = (id) => {
         const deleted = this.state.items.length !== 1 ? (
             this.setState({ 
                 items: this.state.items.filter(item =>  item.id !== id)
             })) : alert("Cannot delete last item");
-    }
+    }*/
 
     handleSubmit = (event) => {
         event.preventDefault();
-        this.setState({items: this.state.items.concat({id: this.state.items.length , title: this.state.text, isCompleted: false})
-        });
+        if(this.state.text.length !== 0){
+            this.setState({items: this.state.items.concat({
+                id: this.state.items.length, 
+                title: this.state.text, 
+                isCompleted: false, 
+                numberLikes: 0
+            })});
+        }
+        else {
+            // replace with toaster
+            alert("Please enter a value")
+        }
         this.cancel();
     }
 
@@ -44,6 +54,15 @@ export class Home extends Component {
 
     updateText = (event) => {
         this.setState({text: event.target.value})
+    }
+
+    handleStarClick = (id) => {
+        this.setState({items: this.state.items.map(item => {
+            if(item.id === id){
+                item.numberLikes += 1;
+            }
+            return item;
+        })});
     }
 
     render() {
@@ -59,13 +78,14 @@ export class Home extends Component {
                                     type="text"
                                     id="submit-box"
                                     placeholder="Add Todo"
+                                    maxLength="280"
                                     value={this.state.text}
                                     onChange={this.updateText}
                                 />
                             </form>
                         </div>
                     </div>
-                <TodoSection todo={this.state.items} updateChecked={this.updateChecked} onDelete={this.updateDelete.bind(this)}/>
+                <TodoSection todo={this.state.items} updateChecked={this.updateChecked} incrementStar={this.handleStarClick}/>
             </React.Fragment>
         )
     }

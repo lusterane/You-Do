@@ -15,7 +15,7 @@ export class Header extends Component {
     
     componentDidUpdate() {
         // refactor with prev state?
-        if(this.state.quote != null && this.state.quote.message != "" && !this.state.updated){
+        if(this.state.quote !== null && this.state.quote.message !== "" && !this.state.updated){
             this.setState({quoteInEdit: this.state.quote.message, updated: true})
         }
     }
@@ -23,7 +23,7 @@ export class Header extends Component {
     handleSubmit = (event) => {
         event.preventDefault();
         const message = this.state.quoteInEdit;
-        if(message == null || message == this.state.quote.message || message.length > 30){
+        if(message === null || message === this.state.quote.message || message.length > 30){
             alert("Header Change Unsuccessful")
         }
         else{

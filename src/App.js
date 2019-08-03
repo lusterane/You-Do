@@ -9,9 +9,14 @@ import SignInPage from './components/SignIn';
 import PasswordForgetPage from './components/PasswordForget/PasswordForget';
 import HomePage from './components/Home/Home';
 import AccountPage from './components/Account/Account';
-import Footer from './components/Layouts/Footer/Footer'
+import Footer from './components/Layouts/Footer/Footer';
+
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faStar } from '@fortawesome/free-solid-svg-icons'
 
 import * as ROUTES from './constants/routes'
+
+library.add(faStar)
 
 class App extends React.Component {
     render(){
@@ -29,8 +34,6 @@ class App extends React.Component {
 
                     <Footer />
                 </Router>
-                
-
                 
                     
                 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossOrigin="anonymous"></link>
