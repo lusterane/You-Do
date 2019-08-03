@@ -1,17 +1,25 @@
 import React, { Component } from 'react'
 
+import './TodoItem.css'
+
 export class TodoItem extends Component {
+    handleTodoItemCheck = (event) => {
+        console.log('clicked');
+    }
+
     render() {
         const {id, title} = this.props.todo;
 
         return (
-            <div style={this.getStyle()}>
+            <div className="todo-item-container card">
                 <input 
                     type="checkbox"
                     onChange={this.props.onChecked.bind(this, id)}
                 /> {' '}
-                {title}
-                <input style={this.getBtnStyle()}
+                <div className="todo-title" onClick={this.handleTodoItemCheck()}>
+                    {title}
+                </div>
+                <input 
                     type="submit"
                     onClick={this.props.onDelete.bind(this, id)}
                     value="X"

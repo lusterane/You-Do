@@ -7,15 +7,14 @@ import SignOutButton from '../SignOut'
 import * as ROUTES from '../../constants/routes'
 
 export class Navigation extends Component {
-    getListStyle = {
-        textDecoration: 'none',
-        color: '#ffffff',
-    };
     
     render() {
+        const colorStyle = {
+            backgroundColor: '#33345F',
+        };
         return (
             <React.Fragment>
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <nav class="navbar navbar-expand-lg navbar-light" id="navbar">
                     <Link className='navbar-brand' to={ROUTES.HOME}>YOU-DO</Link>
                     <div className="collapse navbar-collapse">
                         <ul className='navbar-nav'>

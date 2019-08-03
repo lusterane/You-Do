@@ -1,0 +1,12 @@
+.todo-section-container{
+    flex-direction: row;
+    top: 30vh;
+    width: 80vw;
+    padding: 5em;
+}
+
+#todo-section-card {
+    display: flex;
+    flex-flow: row wrap;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}

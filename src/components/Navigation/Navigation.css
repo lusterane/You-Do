@@ -1,10 +1,10 @@
-.sign-out {
-  color: red;
-}
-.nav {
-  display:flex;
-}
+.navbar {
+  /*background-color: #33345F;
+*/}
 
+#navbar {
+  color: white;
+}
 .left {
   flex-direction: row-reverse;
 }

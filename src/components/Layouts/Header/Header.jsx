@@ -40,20 +40,18 @@ export class Header extends Component {
         return (
             <React.Fragment>
                 <div className="header">
-                    <div className="title">
-                        YOU-DO
-                    </div>
                     <form onSubmit={this.handleSubmit}>
                     {this.state.quoteInEdit ? (
-                        <div>
-                            <span className="quote">"{this.state.quoteInEdit}"</span> 
-                            <span className="author"> -{this.state.writer}</span>
+                        <div className="quote-wrapper">
+                            <p className="quote"><i>"{this.state.quoteInEdit}"</i> -{this.state.writer}</p> 
                         </div>    
                         ) : ""}
                     </form>
                     <input 
+                            maxlength="150"
                             type="text"
-                            className="quote"
+                            className="form-control"
+                            id="quote-box"
                             value={this.state.quoteInEdit}
                             placeholder="Quote Testing"
                             onChange={this.updateQuote}>        

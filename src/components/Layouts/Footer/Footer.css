@@ -1,6 +1,6 @@
 .footer-text {
-    position: fixed;
-    bottom: 0px;
+    position: relative;
+    top: 100%;
     width: 100%;
     text-align: center;
 }

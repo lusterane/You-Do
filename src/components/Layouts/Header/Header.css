@@ -1,15 +1,21 @@
-.title {
-    color: #FFF;
-    padding: 10px;
-    font-size: 50px;
-}
-
 .header {
-    background: #61A49C;
     text-align: center;
 }
 
-.quote, .author {
-    font-style: italic;
+.quote {
+    word-wrap: break-word;
     color: white;
+    padding: 5px;
+    font-size: 20px;
 }
+
+.quote-wrapper {
+    margin:auto;
+    width: 20%;
+}
+
+#quote-box {
+    margin: auto;
+    width: 30em;
+}
+

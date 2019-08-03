@@ -1,15 +1,35 @@
-.submit-box {
-    padding:1em;
-    width: 30em;
+#submit-box {
+
+}
+
+.submit-box-wrapper {
+    position: relative;
+    top:20vh;
+    width: 33%;
     margin: auto;
 }
 
 .container-home {
+
+}
+
+.background-wrapper {
+    height: 100vh;
+}
+
+.background-image {
+    position: fixed;
+    top: 0%;
     width: 100%;
-    height: 50vh;
+    height: 60vh;
+    z-index: -1;
     
     background-image: url('../../assets/henry-co-tuNGv69BFmM-unsplash.jpg');
     background-position: center;
     background-repeat: no-repeat; 
     background-size: cover; 
+}
+
+.test {
+    height: 1000px;
 }

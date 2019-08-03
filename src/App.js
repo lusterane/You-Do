@@ -19,7 +19,6 @@ class App extends React.Component {
             <React.Fragment>
                 <Router>
                     <Navigation />
-                    <Header />
                     
                     <Route exact={true} path="/" component={HomePage} />
                     <Route path={ROUTES.HOME} component={HomePage} />
