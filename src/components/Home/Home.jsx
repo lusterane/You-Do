@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 
 import TodoSection from './TodoSection/TodoSection';
-import Header from '../Layouts/Header/Header'
 import Navigation from '../Navigation/Navigation'
 
 import './Home.css';
@@ -127,7 +126,9 @@ class Home extends Component {
     render() {
         return (
             <React.Fragment>
-                <Header />
+                <div className="logo-container">
+                    <img className="logo-jumbotron" src={require('../../assets/you-do-logo.png')} alt="YOU-DO" />
+                </div>
                 <div className="container-home">
                     <div className="background-image"/>
                         <div className="submit-box-wrapper">

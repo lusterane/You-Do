@@ -60,8 +60,8 @@ class SignInFormBase extends Component {
         } = this.state;
         
         const isInvalid =
-            email == '' ||
-            password == ''
+            email === '' ||
+            password === ''
 
         return (
             <React.Fragment>

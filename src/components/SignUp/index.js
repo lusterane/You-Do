@@ -114,6 +114,6 @@ const SignUpLink = () => (
 
 const SignUpForm = withFirebase(SignUpFormBase);
 
-export default SignUpForm;
+export default SignUpPage;
 
 export { SignUpLink, SignUpForm };

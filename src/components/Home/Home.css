@@ -4,8 +4,12 @@
 
 .submit-box-wrapper {
     position: relative;
-    width: 33%;
-    margin: auto;
+}
+
+#submit-box {
+    width: 35em;
+    margin-left: auto;
+    margin-right: auto!important;
 }
 
 .container-home {
@@ -23,12 +27,20 @@
     height: 70vh;
     z-index: -1;
     
-    background-image: url('../../assets/henry-co-tuNGv69BFmM-unsplash.jpg');
+    background-image: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4) ), 
+    url('../../assets/henry-co-tuNGv69BFmM-unsplash.jpg');
     background-position: center;
     background-repeat: no-repeat; 
     background-size: cover; 
 }
 
-.test {
-    height: 1000px;
+.logo-jumbotron {
+    display: block;
+    cursor: pointer;
+    transform: rotate(-15deg);
+    filter: invert(100%);
+    width: 20em;
+    padding: 5em 0em;
+    margin-left: auto;
+    margin-right: auto;
 }

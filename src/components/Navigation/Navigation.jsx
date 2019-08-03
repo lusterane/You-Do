@@ -1,25 +1,33 @@
 import React, { Component } from 'react'
-// import { Media } from 'react';
 import { Link } from 'react-router-dom';
-import './Navigation.css'
 import SignOutButton from '../SignOut'
 
 import * as ROUTES from '../../constants/routes'
 
+import './Navigation.css'
+
 export class Navigation extends Component {
     
-    getNavStyle = () => {
-        console.log("page", this.props.page === 'home')
+    getNavStyling = () => {
         return (
             (this.props.page === 'home') ? 'navbar navbar-expand-lg navbar-dark' : 'navbar navbar-expand-lg navbar-light bg-light'
         );
     }
-
     render() {
+        const logoStyle = (this.props.page === 'home') ? {
+            width: '6em',
+            transform: 'rotate(-13deg)',
+            filter: 'invert(100%)',
+        } : {
+            width: '6em',
+            transform: 'rotate(-13deg)',
+        } 
         return (
             <React.Fragment>
-                <nav className={this.getNavStyle()} id="navbar">
-                    <Link className='navbar-brand' to={ROUTES.HOME}>YOU-DO</Link>
+                <nav className={this.getNavStyling()} id="navbar">
+                    <Link className='navbar-brand' to={ROUTES.HOME}>
+                        <img style={logoStyle} src={require('../../assets/you-do-logo.png')} alt="YOU-DO"></img>
+                    </Link>
                     <div className="collapse navbar-collapse">
                         <ul className='navbar-nav'>
                             <li>

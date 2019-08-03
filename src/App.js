@@ -1,8 +1,6 @@
 import React from 'react';
-import './App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-import Header from './components/Layouts/Header/Header';
 import Navigation from './components/Navigation/Navigation'
 import SignUpPage from './components/SignUp';
 import SignInPage from './components/SignIn';
@@ -15,6 +13,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faStar } from '@fortawesome/free-solid-svg-icons'
 
 import * as ROUTES from './constants/routes'
+import './App.css';
 
 library.add(faStar)
 
