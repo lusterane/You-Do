@@ -2,7 +2,7 @@
 Public To-Do Playground created using React and Firebase
 
 # Try it
-[lusterane.github.io/you-do](https://lusterane.github.io/you-do)
+[lusterane.github.io/You-Do](https://lusterane.github.io/You-Do/)
 
 # Install
 ```npm install```

@@ -21,6 +21,7 @@ class App extends React.Component {
     render(){
         return (
             <React.Fragment>
+                <div style={{color: 'red', position: 'fixed', fontSize: '15px', marginLeft:'46vw', zIndex: 1}}>DEVELOPMENT BUILD</div>
                 <Router>
                     <Route exact={true} path="/" component={HomePage} />
                     <Route path={ROUTES.HOME} component={HomePage} />

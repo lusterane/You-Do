@@ -1,5 +1,5 @@
 {
-  "homepage": "https://lusterane.github.io/you-do",
+  "homepage": "https://lusterane.github.io/You-Do/",
   "name": "react-app",
   "version": "0.1.0",
   "private": true,
@@ -8,11 +8,13 @@
     "@fortawesome/free-solid-svg-icons": "^5.10.1",
     "@fortawesome/react-fontawesome": "^0.1.4",
     "firebase": "^6.2.2",
+    "gh-pages": "^2.0.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.1",
-    "react-strap": "^0.0.1"
+    "react-strap": "^0.0.1",
+    "recompose": "^0.30.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -37,7 +39,5 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-    "gh-pages": "^2.1.0"
-  }
+  "devDependencies": {}
 }
