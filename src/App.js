@@ -5,7 +5,7 @@ import SignUpPage from './components/SignUp';
 import SignInPage from './components/SignIn';
 import PasswordForgetPage from './components/PasswordForget';
 import HomePage from './components/Home/Home';
-import AccountPage from './components/Account/Account';
+import AccountPage from './components/Account';
 import Footer from './components/Layouts/Footer/Footer';
 
 import { withAuthentication } from './components/Session/'

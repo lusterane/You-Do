@@ -66,7 +66,8 @@ class SignUpFormBase extends Component {
         const isInvalid =
             passwordOne !== passwordTwo ||
             passwordOne === '' ||
-            email === '';
+            email === '' ||
+            passwordOne.length < 6;
         return (
             <React.Fragment>
                 <div className="container-sign-up">
