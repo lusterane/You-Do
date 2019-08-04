@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/you-do/static/css/main.99dff013.chunk.css",
+    "main.js": "/you-do/static/js/main.170b7475.chunk.js",
+    "main.js.map": "/you-do/static/js/main.170b7475.chunk.js.map",
+    "runtime~main.js": "/you-do/static/js/runtime~main.438f8b24.js",
+    "runtime~main.js.map": "/you-do/static/js/runtime~main.438f8b24.js.map",
+    "static/js/2.58dd9e33.chunk.js": "/you-do/static/js/2.58dd9e33.chunk.js",
+    "static/js/2.58dd9e33.chunk.js.map": "/you-do/static/js/2.58dd9e33.chunk.js.map",
+    "index.html": "/you-do/index.html",
+    "precache-manifest.54435b57a64efc58993dc316b3305360.js": "/you-do/precache-manifest.54435b57a64efc58993dc316b3305360.js",
+    "service-worker.js": "/you-do/service-worker.js",
+    "static/css/main.99dff013.chunk.css.map": "/you-do/static/css/main.99dff013.chunk.css.map",
+    "static/media/Home.css": "/you-do/static/media/henry-co-tuNGv69BFmM-unsplash.c8973054.jpg"
+  }
+}
