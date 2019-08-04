@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom';
 import { Navigation } from '../Navigation/Navigation'
+import { compose } from 'recompose';
 
 import { SignUpLink } from '../SignUp'
 import { withFirebase } from '../Firebase';
@@ -99,7 +100,10 @@ class SignInFormBase extends Component {
     }
 }
 
-const SignInForm = withFirebase(SignInFormBase);
+const SignInForm = compose(
+    withRouter,
+    withFirebase,
+)(SignInFormBase);
 
 export default SignInPage;
 
