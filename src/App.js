@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-import Navigation from './components/Navigation/Navigation'
 import SignUpPage from './components/SignUp';
 import SignInPage from './components/SignIn';
 import PasswordForgetPage from './components/PasswordForget/PasswordForget';
 import HomePage from './components/Home/Home';
 import AccountPage from './components/Account/Account';
 import Footer from './components/Layouts/Footer/Footer';
+
+import { AuthUserContext } from './components/Session'
+import { withFirebase } from './components/Firebase'
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faStar } from '@fortawesome/free-solid-svg-icons'
@@ -17,21 +19,44 @@ import './App.css';
 
 library.add(faStar)
 
-class App extends React.Component {
+class App extends Component {
+    constructor(props){
+        super(props);
+
+        this.state = {
+            authUser: null,
+        };
+    }
+
+    componentDidMount() {
+        this.props.firebase.auth.onAuthStateChanged (authUser => {
+            authUser
+                ? this.setState({ authUser })
+                : this.setState({ authUser: null})
+        })
+    }
+
+    componentWillUnmount() {
+        // removes listenenr
+        this.listener();
+    }
+
     render(){
         return (
             <React.Fragment>
-                <div style={{color: 'red', position: 'fixed', fontSize: '15px', marginLeft:'46vw', zIndex: 1}}>DEVELOPMENT BUILD</div>
-                <Router>
-                    <Route exact={true} path="/" component={HomePage} />
-                    <Route path={ROUTES.HOME} component={HomePage} />
-                    <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
-                    <Route path={ROUTES.SIGN_IN} component={SignInPage} />
-                    <Route path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage} />
-                    <Route path={ROUTES.ACCOUNT} component={AccountPage} />
+                <AuthUserContext.Provider value={this.state.authUser}>
+                    <div style={{color: 'red', position: 'fixed', fontSize: '15px', marginLeft:'46vw', zIndex: 1}}>DEVELOPMENT BUILD</div>
+                    <Router>
+                        <Route exact={true} path="/" component={HomePage}/>
+                        <Route path={ROUTES.HOME} component={HomePage}/>
+                        <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
+                        <Route path={ROUTES.SIGN_IN} component={SignInPage} />
+                        <Route path={ROUTES.PASSWORD_FORGET} component={PasswordForgetPage} />
+                        <Route path={ROUTES.ACCOUNT} component={AccountPage} />
 
-                    <Footer />
-                </Router>
+                        <Footer />
+                    </Router>
+                </AuthUserContext.Provider>
                 
                     
                 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossOrigin="anonymous"></link>
@@ -44,4 +69,4 @@ class App extends React.Component {
     }
 }
 
-export default App;
+export default withFirebase(App);
