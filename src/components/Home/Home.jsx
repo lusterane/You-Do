@@ -31,42 +31,42 @@ class Home extends Component {
                     id: 1, 
                     title: testTitle, 
                     isCompleted: false, 
-                    numberLikes: 0,
+                    numberLikes: 20,
                     colorId: 1
                 },
                 {
                     id: 2, 
                     title: testTitle, 
                     isCompleted: false, 
-                    numberLikes: 19,
+                    numberLikes:  20,
                     colorId: 2
                 },
                 {
                     id: 3, 
                     title: testTitle, 
                     isCompleted: false, 
-                    numberLikes: 5,
-                    colorId: 1
+                    numberLikes: 20,
+                    colorId: 3
                 },
                 {
                     id: 4, 
                     title: testTitle, 
                     isCompleted: false, 
-                    numberLikes: 0,
-                    colorId: 3
+                    numberLikes:1,
+                    colorId: 1
                 },
                 {
                     id: 5, 
                     title: testTitle, 
                     isCompleted: false, 
-                    numberLikes: 0,
+                    numberLikes:1,
                     colorId: 2
                 },
                 {
                     id: 6, 
                     title: testTitle, 
                     isCompleted: false, 
-                    numberLikes: 0,
+                    numberLikes:1,
                     colorId:3
                 },
             ]
@@ -145,6 +145,7 @@ class Home extends Component {
                             </form>
                         </div>
                     </div>
+                
                 <TodoSection todo={this.state.items} updateChecked={this.updateChecked} incrementStar={this.handleStarClick}/>
             </React.Fragment>
         )
