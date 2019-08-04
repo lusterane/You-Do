@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import TodoSection from './TodoSection/TodoSection';
-import Navigation from '../Navigation/Navigation'
+import Navigation from '../Navigation'
 
 import './Home.css';
 

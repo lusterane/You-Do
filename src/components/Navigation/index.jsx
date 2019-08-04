@@ -7,21 +7,29 @@ import * as ROUTES from '../../constants/routes'
 
 import './Navigation.css'
 
-const Navigation = () => (
-    <AuthUserContext.Consumer>
-        { authUser =>
-            authUser ? <NavigationAuth /> : <NavigationNoAuth/>
-        }
-    </AuthUserContext.Consumer>
-)
+class Navigation extends React.Component {
+    
+    render() {
+        return(
+        <AuthUserContext.Consumer>
+            { authUser =>
+                authUser ? <NavigationAuth page={this.props.page}/> : <NavigationNoAuth page={this.props.page}/>
+            }
+        </AuthUserContext.Consumer>
+
+        );
+    }
+}
 class NavigationAuth extends Component {
     
     getNavStyling = () => {
+        console.log("props", this.props)
         return (
             (this.props.page === 'home') ? 'navbar navbar-expand-lg navbar-dark' : 'navbar navbar-expand-lg navbar-light bg-light'
         );
     }
     render() {
+        
         const logoStyle = (this.props.page === 'home') ? {
             width: '6em',
             transform: 'rotate(-13deg)',
@@ -60,6 +68,7 @@ class NavigationAuth extends Component {
 class NavigationNoAuth extends Component {
     
     getNavStyling = () => {
+        console.log("props", this.props)
         return (
             (this.props.page === 'home') ? 'navbar navbar-expand-lg navbar-dark' : 'navbar navbar-expand-lg navbar-light bg-light'
         );
