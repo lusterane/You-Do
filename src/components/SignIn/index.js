@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom';
+import { Navigation } from '../Navigation/Navigation'
 
 import { SignUpLink } from '../SignUp'
 import { withFirebase } from '../Firebase';
@@ -7,6 +8,7 @@ import * as ROUTES from '../../constants/routes';
 
 const SignInPage = () => (
     <React.Fragment>
+        <Navigation />
         <SignInForm />
         <div className="form-footer">
             <SignUpLink />
