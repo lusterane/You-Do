@@ -16,7 +16,7 @@ export class TodoItem extends Component {
         return (
             <React.Fragment>
                 <div className="todo-item-container card">
-                    <div className="low-poly-tile" style={this.props.dark ? darkTileStyle(this.props): tileStyle(this.props)}>
+                    <div className="low-poly-tile" style={this.props.dark ? tileStyle(this.props) : darkTileStyle(this.props)}>
                         <div className="like-container">
                             <div>color id: {this.props.todo.colorId}</div>
                             {this.props.todo.numberLikes < 20 ? (
@@ -41,7 +41,7 @@ export class TodoItem extends Component {
 }
 
 const tileStyle = (props) => {
-    let colorHex = '';
+    let colorHex = '#000000';/*
     switch(props.todo.colorId){
         case 1:
             colorHex='#f76a23';
@@ -54,7 +54,7 @@ const tileStyle = (props) => {
             break;
         default:
             colorHex='#000000';
-    }
+    }*/
     return {
         height: '8vw',
         backgroundColor: colorHex,

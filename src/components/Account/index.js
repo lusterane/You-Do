@@ -2,7 +2,7 @@ import React from 'react';
 
 import Navigation from '../Navigation';
 import { PasswordForgetForm } from '../PasswordForget';
-import PasswordChangeForm from '../PasswordChange';
+import { PasswordChangeForm } from '../PasswordChange';
 
 const AccountPage = () => (
     <React.Fragment>
