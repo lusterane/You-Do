@@ -6,7 +6,7 @@ import { withRouter } from 'react-router-dom'
 import * as ROUTES from '../../constants/routes'
 import { withFirebase } from '../Firebase'
 
-import Navigation from '../Navigation'
+import Navigation from'../Layouts/Navigation'
 
 import './PasswordForget.css'
 
@@ -48,9 +48,9 @@ class PasswordForgetFormBase extends Component {
         })
     }
 
-    checkValidity = () => {
+    checkInvalid = () => {
         return(
-            this.state.email !== ''
+            this.state.email === '' || this.state.email === null
         );
     }
 
@@ -73,7 +73,7 @@ class PasswordForgetFormBase extends Component {
                         type="text"
                         placeholder="Email Address"
                         />
-                    <button disabled={this.checkValidity} type="submit" className='btn btn-primary' id='submit-btn'>
+                    <button disabled={this.checkInvalid()} type="submit" className='btn btn-primary' id='submit-btn'>
                         Reset My Password
                     </button>
                     <div className='form-footer'>

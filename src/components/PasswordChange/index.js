@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import * as ROUTES from '../../constants/routes'
 import { withFirebase } from '../Firebase'
 
-import Navigation from '../Navigation'
+import Navigation from'../Layouts/Navigation'
 
 import './PasswordChange.css'
 

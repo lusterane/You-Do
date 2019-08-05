@@ -18,7 +18,6 @@ export class TodoItem extends Component {
                 <div className="todo-item-container card">
                     <div className="low-poly-tile" style={this.props.dark ? tileStyle(this.props) : darkTileStyle(this.props)}>
                         <div className="like-container">
-                            <div>color id: {this.props.todo.colorId}</div>
                             {this.props.todo.numberLikes < 20 ? (
                                 <div>
                                     <span className="like-counter">{this.props.todo.numberLikes}</span>

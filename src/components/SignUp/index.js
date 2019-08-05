@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import Navigation from '../Navigation'
+import Navigation from'../Layouts/Navigation'
 
 import { compose } from 'recompose';
 import * as ROUTES from '../../constants/routes';

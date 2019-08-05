@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Navigation from '../Navigation';
+import Navigation from '../Layouts/Navigation';
 import { PasswordForgetForm } from '../PasswordForget';
 import { PasswordChangeForm } from '../PasswordChange';
 
