@@ -22,6 +22,7 @@ export class Todo extends Component {
                     class="btn btn-primary" 
                     onClick={this.handleClick}
                     style={{position: 'fixed', top: '80%', right: '0', zAxis: '5'}}
+                    disabled={true}
                 >Change Colors (testing)</button>
                 <div className="card todo-section-container" id="todo-section-card">
                     {this.props.todo.map((todo_item) => 

@@ -4,14 +4,22 @@ import Navigation from '../Layouts/Navigation';
 import { PasswordForgetForm } from '../PasswordForget';
 import { PasswordChangeForm } from '../PasswordChange';
 
-const AccountPage = () => (
-    <React.Fragment>
-        <Navigation />
+import { withAuthorization, AuthUserContext } from '../Session'
 
-        <h1>Account Page</h1>
-        <PasswordForgetForm />
-        <PasswordChangeForm />
-    </React.Fragment>
+const AccountPage = () => (
+    <AuthUserContext.Consumer>
+        {authUser => (
+            <React.Fragment>
+                <Navigation />
+                <h1>Account Page</h1>
+                <span>Account: {authUser.email}</span>
+                <PasswordForgetForm />
+                <PasswordChangeForm />
+            </React.Fragment>
+        )}
+    </AuthUserContext.Consumer>
 )
 
-export default AccountPage;
+const condition = authUser => authUser != null;
+
+export default withAuthorization(condition)(AccountPage);
