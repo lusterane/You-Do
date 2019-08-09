@@ -48,6 +48,9 @@ class NavigationAuth extends Component {
                             <li>
                                 <a className='nav-link'><Link className='nav-link' to={ROUTES.ACCOUNT}>Account</Link></a>
                             </li>
+                            <li>
+                                <a className='nav-link'><Link className='nav-link' to={ROUTES.ADMIN}>Admin</Link></a>
+                            </li>
                         </ul>
                     </div>
                     <ul className="nav justify-content-end">
