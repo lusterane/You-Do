@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 
+import { compose } from 'recompose';
 import { withFirebase } from '../Firebase'
+import { withAuthorization, AuthUserContext } from '../Session'
+
 import Navigation from '../Layouts/Navigation'
 
 class AdminPage extends Component {
@@ -39,16 +42,22 @@ class AdminPage extends Component {
         const {users, loading} = this.state;
 
         return (
-            <div>
-                <Navigation />
-                <h1>Admin</h1>
-                {loading && <div>Loading ... </div>}
+            <AuthUserContext.Consumer>
+                {authUser => (
+                    <React.Fragment>
+                        <Navigation />
+                        <h1>Admin</h1>
+                        {loading && <div>Loading ... </div>}
 
-                <UserList users={users} />
-            </div>
+                        <UserList users={users} />
+                        </React.Fragment>
+                )}
+            </AuthUserContext.Consumer>
         )
     }
 }
+
+const condition = authUser => authUser && authUser.role === 'ADMIN';
 
 const UserList = ({ users }) => (
     <ul>
@@ -57,15 +66,21 @@ const UserList = ({ users }) => (
                 <span>
                     <strong>ID: </strong> {user.uid}
                 </span>
+                <br></br>
                 <span>
                     <strong>E-Mail: </strong> {user.email}
                 </span>
+                <br></br>
                 <span>
-                    <strong>Username: </strong> {user.username}
+                    <strong>To-do: </strong> {user.todo}
                 </span>
+                <br></br>
             </li>
         ))}
     </ul>
 )
 
-export default withFirebase(AdminPage);
+export default compose(
+    withFirebase, 
+    withAuthorization(condition),
+)(AdminPage);
