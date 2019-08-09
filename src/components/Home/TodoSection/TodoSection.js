@@ -19,7 +19,7 @@ export class Todo extends Component {
             <React.Fragment>
                 <button 
                     type="button"
-                    class="btn btn-primary" 
+                    className="btn btn-primary" 
                     onClick={this.handleClick}
                     style={{position: 'fixed', top: '80%', right: '0', zAxis: '5'}}
                     disabled={true}

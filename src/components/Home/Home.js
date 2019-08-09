@@ -3,6 +3,8 @@ import React, { Component } from 'react'
 import TodoSection from './TodoSection/TodoSection';
 import Navigation from'../Layouts/Navigation'
 
+import { withFirebase } from '../Firebase';
+
 import './Home.css';
 
 const HomePage = () => (
@@ -12,7 +14,7 @@ const HomePage = () => (
     </React.Fragment>
 )
 
-class Home extends Component {
+class HomeBase extends Component {
     constructor(props)
     {
         super(props);
@@ -21,7 +23,9 @@ class Home extends Component {
             text: "",
         }
     }
-
+    componentDidMount(){
+        console.log("componentDidMount this.props.firebase: ", this.props.firebase);
+    }
     getTestItems = () =>{ 
         const testTitle = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat mas";
         return (
@@ -91,18 +95,13 @@ class Home extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        if(this.state.text.length !== 0){
-            this.setState({items: this.state.items.concat({
-                id: this.state.items.length, 
-                title: this.state.text, 
-                isCompleted: false, 
-                numberLikes: 0
-            })});
-        }
-        else {
-            // replace with toaster
-            alert("Please enter a value")
-        }
+        this.props.firebase
+            .todo(this.state.items.length)
+                .set({
+                    title: this.state.text,
+                    isCompleted: false,
+                    numberLikes: 0
+                });
         this.cancel();
     }
 
@@ -152,4 +151,8 @@ class Home extends Component {
     }
 }
 
+const Home = withFirebase(HomeBase)
+
 export default HomePage;
+
+export { Home };
