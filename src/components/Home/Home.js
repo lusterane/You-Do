@@ -4,8 +4,10 @@ import TodoSection from './TodoSection/TodoSection';
 import Navigation from'../Layouts/Navigation'
 
 import { withFirebase } from '../Firebase';
+import key from 'weak-key';
 
 import './Home.css';
+import { tsParenthesizedType } from '@babel/types';
 
 const HomePage = () => (
     <React.Fragment>
@@ -19,13 +21,33 @@ class HomeBase extends Component {
     {
         super(props);
         this.state = {
-            items: this.getTestItems(),
+            loading: false,
+            items: [],
             text: "",
         }
     }
+
     componentDidMount(){
-        console.log("componentDidMount this.props.firebase: ", this.props.firebase);
+        this.setState({ loading: true });
+
+        this.props.firebase.todos().on('value', snapshot => {
+            const todosObject = snapshot.val();
+
+            const todosList = Object.keys(todosObject).map(key => ({
+                ...todosObject[key],
+            }));
+
+            this.setState({
+                items: todosList,
+                loading: false,
+            })
+        })
     }
+
+    componentWillUnmount(){
+        this.props.firebase.todos().off();
+    }
+
     getTestItems = () =>{ 
         const testTitle = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat mas";
         return (
@@ -66,13 +88,6 @@ class HomeBase extends Component {
                     numberLikes:1,
                     colorId: 2
                 },
-                {
-                    id: 6, 
-                    title: testTitle, 
-                    isCompleted: false, 
-                    numberLikes:1,
-                    colorId:3
-                },
             ]
         )
     }
@@ -95,13 +110,14 @@ class HomeBase extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
+        const newTodo = {
+            title: this.state.text,
+            isCompleted: false,
+            numberLikes: 0
+        }
         this.props.firebase
-            .todo(this.state.items.length)
-                .set({
-                    title: this.state.text,
-                    isCompleted: false,
-                    numberLikes: 0
-                });
+            .todo(key(newTodo))
+                .set(newTodo);
         this.cancel();
     }
 

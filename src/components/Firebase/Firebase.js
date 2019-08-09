@@ -51,6 +51,8 @@ class Firebase {
     users = () => this.db.ref(`users`);
 
     todo = todoId => this.db.ref(`todo/${todoId}`);
+    todos = () => this.db.ref(`todo`);
+
 }
 
 export default Firebase;

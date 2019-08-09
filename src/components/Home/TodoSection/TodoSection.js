@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import TodoItem from '../TodoItem/TodoItem'
 
+import key from 'weak-key'
+
 import "./TodoSection.css"
 
 export class Todo extends Component {
@@ -26,7 +28,7 @@ export class Todo extends Component {
                 >Change Colors (testing)</button>
                 <div className="card todo-section-container" id="todo-section-card">
                     {this.props.todo.map((todo_item) => 
-                        <TodoItem todo={todo_item} key={todo_item.id} updateChecked={this.props.updateChecked} incrementStar={this.props.incrementStar} dark={this.state.dark}/>)}
+                        <TodoItem todo={todo_item} key={key(todo_item)} updateChecked={this.props.updateChecked} incrementStar={this.props.incrementStar} dark={this.state.dark}/>)}
                 </div>
             </React.Fragment>
         )}
