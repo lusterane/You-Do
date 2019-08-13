@@ -22,7 +22,7 @@ library.add(faStar)
 const App = () => (
     <div>
         <div style={{color: 'red', position: 'fixed', fontSize: '15px', marginLeft:'46vw', zIndex: 1}}>DEVELOPMENT BUILD</div>
-        <Router>
+        <Router basename="/You-Do/">
             <Route exact={true} path="/" component={HomePage}/>
             <Route path={ROUTES.HOME} component={HomePage}/>
             <Route path={ROUTES.SIGN_UP} component={SignUpPage} />
