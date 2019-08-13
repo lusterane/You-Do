@@ -1,8 +1,8 @@
 .todo-item-container {
-    width: 400px;
-    height: 400px;
+    width: 350px;
+    height: 350px;
     box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
-    margin: 2em;
+    margin: 10px;
     padding: 0;
 }
 

@@ -27,8 +27,9 @@ export class Todo extends Component {
                     disabled={true}
                 >Change Colors (testing)</button>
                 <div className="card todo-section-container" id="todo-section-card">
-                    {this.props.todo.map((todo_item) => 
-                        <TodoItem todo={todo_item} key={key(todo_item)} updateChecked={this.props.updateChecked} incrementStar={this.props.incrementStar} dark={this.state.dark}/>)}
+                    {this.props.todo.map((todo_item) => (
+                        <TodoItem todo={todo_item} key={Object.keys(todo_item)} updateChecked={this.props.updateChecked} incrementStar={this.props.incrementStar} dark={this.state.dark}/>)
+                    )}
                 </div>
             </React.Fragment>
         )}

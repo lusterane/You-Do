@@ -5,9 +5,9 @@ import Navigation from'../Layouts/Navigation'
 
 import { withFirebase } from '../Firebase';
 import key from 'weak-key';
+import Time from 'react-time';
 
 import './Home.css';
-import { tsParenthesizedType } from '@babel/types';
 
 const HomePage = () => (
     <React.Fragment>
@@ -110,10 +110,16 @@ class HomeBase extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
+
+        const normalizedCurrentDate = (
+            JSON.stringify(new Date())
+            .substring(1, 25));
+
         const newTodo = {
             title: this.state.text,
             isCompleted: false,
-            numberLikes: 0
+            numberLikes: 0,
+            currentDateTime: normalizedCurrentDate
         }
         this.props.firebase
             .todo(key(newTodo))
