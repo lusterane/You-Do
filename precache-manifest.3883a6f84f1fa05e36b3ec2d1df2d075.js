@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7909a8a9ece910deaa786c16e122ca60",
+    "revision": "ae42225c98544b3bf51c31241937be22",
     "url": "/You-Do/index.html"
   },
   {
-    "revision": "d1d49668a9b56ad92d5e",
+    "revision": "9577a0fd50e53cefc8e9",
     "url": "/You-Do/static/css/main.1186d57c.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/You-Do/static/js/2.4ebfdc2c.chunk.js"
   },
   {
-    "revision": "d1d49668a9b56ad92d5e",
-    "url": "/You-Do/static/js/main.b6c3fd4e.chunk.js"
+    "revision": "9577a0fd50e53cefc8e9",
+    "url": "/You-Do/static/js/main.d03e6b0d.chunk.js"
   },
   {
     "revision": "527a38b7393acb473e2c",
