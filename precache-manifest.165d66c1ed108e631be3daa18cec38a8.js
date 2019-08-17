@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ae42225c98544b3bf51c31241937be22",
+    "revision": "0cbd671c3c429f8579bfc16ed84f29d6",
     "url": "/You-Do/index.html"
   },
   {
-    "revision": "9577a0fd50e53cefc8e9",
-    "url": "/You-Do/static/css/main.1186d57c.chunk.css"
+    "revision": "807cd1174c9d6e066e4a",
+    "url": "/You-Do/static/css/main.7440a70b.chunk.css"
   },
   {
-    "revision": "86913b491115c76c60f3",
-    "url": "/You-Do/static/js/2.4ebfdc2c.chunk.js"
+    "revision": "6f390f17a10e642d07f0",
+    "url": "/You-Do/static/js/2.bbcd2307.chunk.js"
   },
   {
-    "revision": "9577a0fd50e53cefc8e9",
-    "url": "/You-Do/static/js/main.d03e6b0d.chunk.js"
+    "revision": "807cd1174c9d6e066e4a",
+    "url": "/You-Do/static/js/main.dee0b8c1.chunk.js"
   },
   {
     "revision": "527a38b7393acb473e2c",
